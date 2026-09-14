@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.log
+server-startup.*
+.vscode/
+
+# Full research corpora and generated bulk outputs do not belong in this demo.
+*.jsonl
+raw-data/
+exports/

@@ -1,0 +1,217 @@
+[
+  {
+    "number": 1,
+    "query_graph_id": "臺灣宜蘭地方法院刑事_易_20230119__侵占遺失物罪",
+    "query_page": "case-01-query",
+    "query_svg": "svg/case-01-query.svg",
+    "references": [
+      {
+        "rank": 1,
+        "graph_id": "臺灣彰化地方法院刑事_簡_20201125__侵占遺失物罪",
+        "score": 0.9607,
+        "page_id": "case-01-reference-1",
+        "svg": "svg/case-01-reference-1.svg"
+      },
+      {
+        "rank": 2,
+        "graph_id": "臺灣臺南地方法院刑事_易_20220524__侵占遺失物罪",
+        "score": 0.9601,
+        "page_id": "case-01-reference-2",
+        "svg": "svg/case-01-reference-2.svg"
+      },
+      {
+        "rank": 3,
+        "graph_id": "臺灣桃園地方法院刑事_易_20250529__侵占遺失物罪",
+        "score": 0.9583,
+        "page_id": "case-01-reference-3",
+        "svg": "svg/case-01-reference-3.svg"
+      },
+      {
+        "rank": 4,
+        "graph_id": "臺灣嘉義地方法院刑事_朴簡_20211130__侵占遺失物罪",
+        "score": 0.9582,
+        "page_id": "case-01-reference-4",
+        "svg": "svg/case-01-reference-4.svg"
+      },
+      {
+        "rank": 5,
+        "graph_id": "臺灣高雄地方法院刑事_審易_20190110__侵占遺失物罪",
+        "score": 0.958,
+        "page_id": "case-01-reference-5",
+        "svg": "svg/case-01-reference-5.svg"
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "query_graph_id": "臺灣南投地方法院刑事_投簡_20221208__偽造私文書罪",
+    "query_page": "case-02-query",
+    "query_svg": "svg/case-02-query.svg",
+    "references": [
+      {
+        "rank": 1,
+        "graph_id": "臺灣彰化地方法院刑事_訴_20190618__偽造私文書罪",
+        "score": 0.9851,
+        "page_id": "case-02-reference-1",
+        "svg": "svg/case-02-reference-1.svg"
+      },
+      {
+        "rank": 2,
+        "graph_id": "臺灣屏東地方法院刑事_簡_20190606__偽造私文書罪",
+        "score": 0.9844,
+        "page_id": "case-02-reference-2",
+        "svg": "svg/case-02-reference-2.svg"
+      },
+      {
+        "rank": 3,
+        "graph_id": "臺灣臺中地方法院刑事_原訴緝_20220712__偽造私文書罪",
+        "score": 0.9841,
+        "page_id": "case-02-reference-3",
+        "svg": "svg/case-02-reference-3.svg"
+      },
+      {
+        "rank": 4,
+        "graph_id": "臺灣新北地方法院刑事_審訴_20200108__行使偽造文書罪",
+        "score": 0.9841,
+        "page_id": "case-02-reference-4",
+        "svg": "svg/case-02-reference-4.svg"
+      },
+      {
+        "rank": 5,
+        "graph_id": "臺灣橋頭地方法院刑事_簡_20210423__偽造私文書罪",
+        "score": 0.9819,
+        "page_id": "case-02-reference-5",
+        "svg": "svg/case-02-reference-5.svg"
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "query_graph_id": "臺灣新北地方法院刑事_訴_20230823__普通傷害罪",
+    "query_page": "case-03-query",
+    "query_svg": "svg/case-03-query.svg",
+    "references": [
+      {
+        "rank": 1,
+        "graph_id": "臺灣新北地方法院刑事_訴_20160226__普通傷害罪",
+        "score": 0.9925,
+        "page_id": "case-03-reference-1",
+        "svg": "svg/case-03-reference-1.svg"
+      },
+      {
+        "rank": 2,
+        "graph_id": "臺灣臺南地方法院刑事_易_20191224__普通傷害罪",
+        "score": 0.9924,
+        "page_id": "case-03-reference-2",
+        "svg": "svg/case-03-reference-2.svg"
+      },
+      {
+        "rank": 3,
+        "graph_id": "臺灣澎湖地方法院刑事_訴_20251209__普通傷害罪",
+        "score": 0.9918,
+        "page_id": "case-03-reference-3",
+        "svg": "svg/case-03-reference-3.svg"
+      },
+      {
+        "rank": 4,
+        "graph_id": "臺灣屏東地方法院刑事_簡上_20240606__普通傷害罪",
+        "score": 0.9912,
+        "page_id": "case-03-reference-4",
+        "svg": "svg/case-03-reference-4.svg"
+      },
+      {
+        "rank": 5,
+        "graph_id": "臺灣臺中地方法院刑事_訴_20200616__普通傷害罪",
+        "score": 0.9911,
+        "page_id": "case-03-reference-5",
+        "svg": "svg/case-03-reference-5.svg"
+      }
+    ]
+  },
+  {
+    "number": 4,
+    "query_graph_id": "臺灣新北地方法院刑事_訴_20230720__私行拘禁罪",
+    "query_page": "case-04-query",
+    "query_svg": "svg/case-04-query.svg",
+    "references": [
+      {
+        "rank": 1,
+        "graph_id": "臺灣臺中地方法院刑事_訴緝_20181128__私行拘禁罪",
+        "score": 0.9607,
+        "page_id": "case-04-reference-1",
+        "svg": "svg/case-04-reference-1.svg"
+      },
+      {
+        "rank": 2,
+        "graph_id": "臺灣臺北地方法院刑事_原訴_20250731__加重剝奪行動自由罪",
+        "score": 0.9555,
+        "page_id": "case-04-reference-2",
+        "svg": "svg/case-04-reference-2.svg"
+      },
+      {
+        "rank": 3,
+        "graph_id": "臺灣臺中地方法院刑事_原簡_20210721__私行拘禁罪",
+        "score": 0.9522,
+        "page_id": "case-04-reference-3",
+        "svg": "svg/case-04-reference-3.svg"
+      },
+      {
+        "rank": 4,
+        "graph_id": "臺灣士林地方法院刑事_易_20160316__私行拘禁罪",
+        "score": 0.9506,
+        "page_id": "case-04-reference-4",
+        "svg": "svg/case-04-reference-4.svg"
+      },
+      {
+        "rank": 5,
+        "graph_id": "臺灣彰化地方法院刑事_簡_20170925__私行拘禁罪",
+        "score": 0.9505,
+        "page_id": "case-04-reference-5",
+        "svg": "svg/case-04-reference-5.svg"
+      }
+    ]
+  },
+  {
+    "number": 5,
+    "query_graph_id": "臺灣宜蘭地方法院刑事_交簡_20230928__過失傷害罪",
+    "query_page": "case-05-query",
+    "query_svg": "svg/case-05-query.svg",
+    "references": [
+      {
+        "rank": 1,
+        "graph_id": "臺灣臺中地方法院刑事_原交易_20200624__過失傷害罪",
+        "score": 0.9703,
+        "page_id": "case-05-reference-1",
+        "svg": "svg/case-05-reference-1.svg"
+      },
+      {
+        "rank": 2,
+        "graph_id": "臺灣基隆地方法院刑事_基交簡_20220421__過失傷害罪",
+        "score": 0.9693,
+        "page_id": "case-05-reference-2",
+        "svg": "svg/case-05-reference-2.svg"
+      },
+      {
+        "rank": 3,
+        "graph_id": "臺灣橋頭地方法院刑事_交簡_20201125__過失傷害罪",
+        "score": 0.969,
+        "page_id": "case-05-reference-3",
+        "svg": "svg/case-05-reference-3.svg"
+      },
+      {
+        "rank": 4,
+        "graph_id": "臺灣嘉義地方法院刑事_嘉交簡_20200122__過失傷害罪",
+        "score": 0.9688,
+        "page_id": "case-05-reference-4",
+        "svg": "svg/case-05-reference-4.svg"
+      },
+      {
+        "rank": 5,
+        "graph_id": "臺灣臺中地方法院刑事_交易_20230814__妨害公眾往來安全罪",
+        "score": 0.9682,
+        "page_id": "case-05-reference-5",
+        "svg": "svg/case-05-reference-5.svg"
+      }
+    ]
+  }
+]
