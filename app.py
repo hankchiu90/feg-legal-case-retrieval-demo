@@ -71,10 +71,10 @@ HTML = r'''<!doctype html>
   </style>
 </head>
 <body>
-<header><h1>判例脈絡</h1><p>依案件事實脈絡，找出值得參考的相近判決。</p></header>
+<header><h1>判例脈絡</h1><p>以 FEG 檢索可追溯的案例依據，支援大語言模型進行法律推理。</p></header>
 <main>
   <label for="querySelect"><strong>選擇要分析的案件</strong></label><select id="querySelect"></select>
-  <p class="hint">系統會呈現五件事實結構相近的參考判決，以及案件事實圖譜與分析理由。</p>
+  <p class="hint">系統先以事實事件圖（FEG）檢索五件事實結構相近的判決，再將其事實、罪名、法條與結果作為 LLM 推理的參考依據。</p>
   <div id="loading">正在載入案件資料…</div><section id="content" hidden></section>
 </main>
 <div class="modal" id="graphModal" role="dialog" aria-modal="true" aria-label="放大檢視事實圖譜"><button id="closeModal" type="button">關閉</button><div class="zoom-stage" id="zoomStage"><img id="modalImage" alt="放大事實圖譜" draggable="false"></div><span class="zoom-help">滾輪縮放・放大後按住圖譜左右拖曳・關閉後重設</span></div>
@@ -100,13 +100,13 @@ function renderGraph(containerId, graph){
 }
 function caseHeader(c){return `<h2>${esc(c.charge)}</h2><div class="meta"><span class="tag">${esc(c.article)}</span><span class="tag">${esc(c.title)}</span></div><p class="small">${esc(c.id)}</p><p>${esc(c.main)}</p>`}
 function render(){ const q=current.query,m=current.matches[active], llm=current.llm, content=document.querySelector('#content'); content.innerHTML=`
- <div class="card"><p class="small">正在分析的案件</p>${caseHeader(q)}<details><summary>查看本案完整事實</summary><div class="fact">${esc(q.fact)}</div></details></div>
- <h2>相近參考判決</h2><div class="match-grid">${current.matches.map((x,i)=>`<button class="match ${i===active?'active':''}" data-rank="${i}"><strong>參考案例 ${x.rank}</strong><br><span class="score">相近度 ${Number(x.score).toFixed(4)}</span><br><span class="small">${esc(x.case.charge)}</span></button>`).join('')}</div>
- <div class="card"><p class="small">目前比較的參考案例 ${m.rank}</p>${caseHeader(m.case)}<p><strong>事實結構相近度：</strong><span class="score">${Number(m.score).toFixed(4)}</span></p><details><summary>查看相似案例完整事實</summary><div class="fact">${esc(m.case.fact)}</div></details></div>
+ <div class="card"><p class="small">步驟 1｜正在分析的案件</p>${caseHeader(q)}<details><summary>查看本案完整事實</summary><div class="fact">${esc(q.fact)}</div></details></div>
+ <section class="card"><h2>步驟 2｜FEG 檢索：LLM 的參考案例</h2><p class="hint">以下五件判決依事實結構相近度排序；它們會連同本案脈絡提供給 LLM，作為推理時可回溯的案例依據。</p><div class="match-grid">${current.matches.map((x,i)=>`<button class="match ${i===active?'active':''}" data-rank="${i}"><strong>參考案例 ${x.rank}</strong><br><span class="score">相近度 ${Number(x.score).toFixed(4)}</span><br><span class="small">${esc(x.case.charge)}</span></button>`).join('')}</div></section>
+ <div class="card"><p class="small">目前檢視的 LLM 參考案例 ${m.rank}</p>${caseHeader(m.case)}<p><strong>事實結構相近度：</strong><span class="score">${Number(m.score).toFixed(4)}</span></p><details><summary>查看相似案例完整事實</summary><div class="fact">${esc(m.case.fact)}</div></details></div>
  <div class="legend">${Object.entries(typeColors).map(([k,v])=>`<span><i class="swatch" style="background:${v}"></i>${k}</span>`).join('')}</div><section class="comparison"><section><h2>本案事實圖譜</h2><div class="drawio-graph"><img src="${current.drawio_query_svg}" alt="本案事實圖譜（Draw.io 製作）"></div><button class="zoom" type="button" data-zoom="${current.drawio_query_svg}">放大查看本案圖譜</button></section><section><h2>參考案例 ${m.rank} 的事實圖譜</h2><div class="drawio-graph"><img src="${m.drawio_svg}" alt="參考案例事實圖譜（Draw.io 製作）"></div><button class="zoom" type="button" data-zoom="${m.drawio_svg}">放大查看相似案例圖譜</button></section></section>
  <p class="hint">左右兩圖皆由 Draw.io 匯出；可透過上方參考案例按鈕切換比較對象。</p>
- <section class="card"><h2>AI 分析結果</h2>${llm?`<div class="grid"><div><strong>建議罪名</strong><p>${esc(llm.prediction.predicted_charge||'—')}</p></div><div><strong>可能適用條文</strong><p>${esc(llm.prediction.predicted_article||'—')}</p></div></div><details><summary>查看分析理由</summary><pre>${esc(llm.reasoning)}</pre></details>`:'<p class="hint">此案件尚無可供顯示的分析結果。</p>'}</section>
- <footer class="card notice">本系統用於案件檢索與資訊整理；相近度與 AI 分析僅供輔助參考，不構成個案法律意見或裁判依據。</footer>`;
+ <section class="card"><h2>步驟 3｜具案例依據的 LLM 推理</h2><p class="hint">LLM 以本案與上述五件檢索案例作為脈絡輸入，產出罪名與可能適用條文；使用者可回看每一件參考案例的事實與圖譜。</p>${llm?`<div class="grid"><div><strong>建議罪名</strong><p>${esc(llm.prediction.predicted_charge||'—')}</p></div><div><strong>可能適用條文</strong><p>${esc(llm.prediction.predicted_article||'—')}</p></div></div><details><summary>查看公開展示版的推理說明</summary><pre>${esc(llm.reasoning)}</pre></details>`:'<p class="hint">此案件尚無可供顯示的分析結果。</p>'}</section>
+ <footer class="card notice">本系統以 FEG 檢索為 LLM 提供案例脈絡與可追溯依據；相近度與 LLM 推理僅供資訊整理與研究展示，不構成個案法律意見或裁判依據。</footer>`;
  document.querySelectorAll('[data-rank]').forEach(b=>b.addEventListener('click',()=>{active=Number(b.dataset.rank);render();})); document.querySelectorAll('[data-zoom]').forEach(b=>b.addEventListener('click',()=>{resetZoom(b.dataset.zoom);graphModal.classList.add('open')})); }
 let zoomScale=1,zoomX=0,zoomY=0,zoomBaseWidth=0,zoomBaseHeight=0,dragState=null;
 const graphModal=document.querySelector('#graphModal'),zoomStage=document.querySelector('#zoomStage'),modalImage=document.querySelector('#modalImage');
