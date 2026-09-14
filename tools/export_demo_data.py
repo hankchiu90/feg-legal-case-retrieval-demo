@@ -77,7 +77,7 @@ def main() -> None:
                 "prediction": row.get("llm_prediction", {}),
                 "ground_truth": row.get("ground_truth", {}),
                 "is_correct": row.get("is_correct"),
-                "reasoning": "公開展示版僅呈現模型結論與適用條文；完整個案分析文字不隨作品集公開。",
+                "reasoning": row.get("full_reasoning_report", ""),
             }
 
     output = {
