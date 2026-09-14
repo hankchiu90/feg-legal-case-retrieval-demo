@@ -43,6 +43,16 @@ python app.py
 
 開啟 [http://127.0.0.1:8780](http://127.0.0.1:8780)。
 
+## 公開展示部署
+
+此專案也包含不依賴後端的 `index.html`。展示資料與 Draw.io SVG 都以相對路徑載入，因此可直接部署到 GitHub Pages。
+
+在 GitHub Repo 的 **Settings → Pages** 中，將來源設為 **Deploy from a branch**、分支選 **main**、資料夾選 **/(root)**，儲存後即可取得公開展示網址：
+
+`https://hankchiu90.github.io/feg-legal-case-retrieval-demo/`
+
+每次更新 `main` 分支後，GitHub Pages 會重新發布此靜態展示頁。
+
 ## 資料與公開注意事項
 
 `data/showcase_data.json` 是為目前展示畫面整理的精簡資料，而非完整研究資料集。若要建立公開 GitHub 儲存庫，請在首次推送前完成個資與資料授權檢查；這個步驟會在上傳前另外確認。
